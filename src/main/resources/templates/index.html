@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam</title>
+</head>
+<body>
+<center>
+  <h1 style="text-align: center;color:red;margin-top: 30px">Liste des Livres</h1>
+
+  <table>
+    <thead>
+      <tr>
+          <th>ISBN</th>
+          <th>Date Prod</th>
+          <th>titre</th>
+          <th>domaine</th>
+          <th>nb_exemplaire</th>
+          <th>auteur</th>
+          <th>operation</th>
+          <th>  <a th:href="new" class="btn btn-light" >Add</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="livre:${listlivre}">
+          <td th:text="${livre.ISBN}"></td>
+          <td th:text="${livre.date}"></td>
+          <td th:text="${livre.titre}"></td>
+          <td th:text="${livre.domaine}"></td>
+          <td th:text="${livre.auteur}"></td>
+          <td th:text="${livre.nb_exemplaire}"></td>
+        <td><a class="btn btn-secondary" th:href="@{'/edit/'+${livre.ISBN}}">Edit</a>
+          <a class="btn btn-warning" th:href="@{'/delete/'+${livre.ISBN}}">Delete</a> </td>
+
+      </tr>
+    </tbody>
+  </table>
+
+</center>
+</body>
+</html>

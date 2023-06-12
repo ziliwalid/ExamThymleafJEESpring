@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <center>
+      <form action="#" th:action="@{/save}" th:object="${book}" method="post">
+        <table border="0" cellpadding="10">
+
+          <tr> <td> ISBN:</td>
+            <td> <input type="text" th:field="*{ISBN}" readonly="readonly" /></td>
+          </tr>
+          <tr> <td>titre:</td>
+            <td> <input type="text" th:field="*{titre}"/></td>
+          </tr>
+          <tr> <td>auteur:</td>
+            <td> <input type="text" th:field="*{auteur}"/></td>
+          </tr>
+          <tr> <td>domaine:</td>
+            <td> <input type="text"  th:field="*{domaine}"/></td>
+          </tr>
+          <tr> <td>nb_exemplaire:</td>
+            <td> <input type="text" th:field="*{nb_exemplaire}"/></td>
+          </tr>
+          <tr> <td>date:</td>
+            <td> <input type="text" th:field="*{date}"/></td>
+          </tr>
+
+
+          <tr>
+            <td colspan="2">  <button type="submit">Update</button></td>
+          </tr>
+        </table>
+      </form>
+    </center>
+
+
+
+</body>
+</html>
